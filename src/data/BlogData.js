@@ -48,7 +48,7 @@ export const Blogs = [
         link:"https://codebucks.hashnode.dev/pagination-in-react"
 
     },
-   
+
     {
         id:7,
         name:"What is Redux ? Simply Explained!",
@@ -65,5 +65,5 @@ export const Blogs = [
         imgSrc:"https://res.cloudinary.com/practicaldev/image/fetch/s--rv4I8UwE--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/0a9h50milhlf1us6mn4a.png",
         link:"https://dev.to/codebucks/build-sidebar-navigation-menu-in-reactjs-with-react-router-and-framer-motion-for-cool-page-transition-effects-4bc3"
     },
-  
-] 
+
+]
