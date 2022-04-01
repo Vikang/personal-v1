@@ -1,5 +1,5 @@
 ### Images of The Portfolio Website:
-![HOME]
+![HOME](https://github.com/Vikang/personal-v1/blob/main/Portfolio%20Images/Home.png)
 
 
 ### Resources Used in This Project
