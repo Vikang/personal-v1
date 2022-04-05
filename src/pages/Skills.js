@@ -32,29 +32,24 @@ const Main = styled.div`
   overflow: hidden;
   word-wrap: break-word;
   cursor: pointer;
-
   font-family: 'Libre Baskerville', serif;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-
   /* @media only screen and (max-width: 1300px) {
     font-size: 15px;
     width: auto;
     word-wrap: break-word;
   } */
-
   @media only screen and (max-width: 1300px) {
     font-size: 12px;
     width: 250px;
     word-wrap: break-word;
   }
-
   &:hover{
     color: ${props => props.theme.body};
     background-color: #a87f63;
 }
-
   ul.pretty-list {
     padding: 0.5rem 0;
     display: grid;
@@ -65,13 +60,11 @@ const Main = styled.div`
     margin: 0px 0 0 50px;
     overflow: hidden;
     list-style: none;
-
     @media only screen and (max-width: 1300px) {
       grid-template-columns: repeat(2, minmax(50px, 200px));
       width: 250px;
       word-wrap: break-word;
     }
-
     li {
       position: relative;
       margin-bottom: 10px;
@@ -79,7 +72,6 @@ const Main = styled.div`
       /* color: black; */
       /* font-family: var(--font-mono); */
       /* font-size: var(--fz-xs); */
-
       &:before {
         content: '▸';
         /* color: #a87f63; */
@@ -98,14 +90,11 @@ const Title = styled.h2`
   justify-content: center;
   align-items: center;
   font-size: calc(1em + 1vw);
-
-
 ${Main}:hover &{
     &>*{
         fill:${props => props.theme.body};
     }
 }
-
 &>*:first-child{
 margin-right: 1rem;
 }
