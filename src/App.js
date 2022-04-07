@@ -5,7 +5,7 @@ import { GlobalStyles } from "./styles"
 import SoundBar from "./subComponents/SoundBar";
 import Logo from './subComponents/Logo'
 
-import { Home, About, Experience, Skills, Work } from './pages'
+import { Home, About, Experience, Skills, Work, NotFound } from './pages'
 
 function App() {
   return <>
@@ -19,6 +19,7 @@ function App() {
         <Route exact path= "/experience" component={Experience}/>
         <Route exact path= "/skills" component={Skills}/>
         <Route exact path= "/work" component={Work}/>
+        <Route component={NotFound}/>
       </Switch>
     </ThemeProvider>
 
