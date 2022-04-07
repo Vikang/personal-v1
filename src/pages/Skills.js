@@ -7,6 +7,7 @@ import Socials from '../subComponents/Socials';
 import Email from '../subComponents/Email';
 import Particle from '../subComponents/Particle';
 import BigTitle from '../subComponents/BigTitle'
+import Navigation from '../components/Navigation';
 
 const Box = styled.div`
   background-color: ${props => props.theme.body};
@@ -19,9 +20,10 @@ const Box = styled.div`
 `
 
 const Main = styled.div`
-  border: 2px solid #a87f63;;
+  border: 2px solid #a87f63;
   color:  #a87f63;
-  background-color:  ${props => props.theme.body};
+  background-color: #f1e6da;
+  /* background-color:  ${props => props.theme.body}; */
   padding: 2rem;
   width: 30vw;
   height: 60vh;
@@ -77,7 +79,8 @@ const Main = styled.div`
         /* color: #a87f63; */
         position: absolute;
         left: 0;
-        font-size: 30px;
+        top: 5px;
+        font-size: 25px;
         line-height: 12px;
       }
     }
@@ -122,6 +125,7 @@ const Skills = () => {
 
   return (
     <ThemeProvider theme={BeigeTheme}>
+      <Navigation/>
       {/* Languages, Frameworks, Tools, Design */}
       <Box>
       <Socials/>

@@ -3,6 +3,7 @@ import React from 'react'
 
 import { ThemeProvider } from 'styled-components'
 import { BeigeTheme } from '../components/Themes'
+import Navigation from '../components/Navigation';
 import Socials from '../subComponents/Socials';
 import Email from '../subComponents/Email';
 
@@ -12,6 +13,7 @@ import Roadmap from '../components/Roadmap';
 const About = () => {
   return (
     <ThemeProvider theme={BeigeTheme}>
+      <Navigation/>
       <AboutTop/>
       <Roadmap/>
       <Socials/>

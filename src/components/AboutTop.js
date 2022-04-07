@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 import { TypewriterText } from '../subComponents/TypewriterText';
 import Me from '../assets/Images/me.jpg'
+import { DownArrow } from '../components/AllSvgs';
+import { motion } from 'framer-motion'
 
 const Section = styled.section`
-  min-height: ${props => `calc(100vh - ${props.theme.navHeight})`   };
+  /* min-height: ${props => `calc(100vh - ${props.theme.navHeight})` }; */
+  min-height: 100vh;
   width: 100vw;
   position: relative;
   background-color: ${props => props.theme.body};
@@ -15,7 +19,6 @@ const Container = styled.div`
   min-height: 90vh;
   margin: 0 auto;
   background-color: ${props => props.theme.body};
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,7 +71,35 @@ const Details2 = styled.h3`
     letter-spacing: 0.19em;
 `
 
+const ArrowContainer = styled.span`
+  position: relative;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+
+  h3 {
+    font-weight: 200;
+    padding-top: 15px;
+    color: #a87f6e;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+`
+
 const AboutTop = () => {
+    const ref = useRef(null);
+
+    const scrollToRoadmap = () => {
+
+        let element = document.getElementById("roadmap");
+
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+        })
+      }
+
   return (
     <Section>
         <Container>
@@ -88,6 +119,17 @@ const AboutTop = () => {
             </DetailsContainer>
             </Box2>
         </Container>
+        <ArrowContainer>
+            <NavLink style={{color:'white'}} to="#roadmap" >
+                <motion.div
+                    whileHover={{y:-5}}
+                    whileTap={{scale: 0.9}}
+                >
+                <DownArrow height={80} width={40} fill = "currentColor" ref={ref}  onClick={() => scrollToRoadmap()}/>
+                </motion.div>
+            </NavLink>
+            <h3>My<br/>Journey</h3>
+        </ArrowContainer>
     </Section>
   )
 }

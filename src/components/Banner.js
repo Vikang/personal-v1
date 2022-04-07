@@ -102,6 +102,7 @@ const ResumeBttn = styled.button`
     padding: 14px 40px;
     width: 300px;
     height: 75px;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     cursor: pointer;
 
@@ -110,7 +111,7 @@ const ResumeBttn = styled.button`
 const Banner = () => {
 
     function changeBackground(e) {
-        e.target.style.background = '#f6f2ef';
+        e.target.style.background = '#f1e6da';
       }
     function changeBackground1(e) {
         e.target.style.background = 'transparent';

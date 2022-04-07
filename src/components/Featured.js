@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { Featured } from '../data/FeaturedData'
+import { DownArrow } from '../components/AllSvgs';
+import { motion } from 'framer-motion'
 
 const Section = styled.section`
   min-height: ${props => `calc(100vh - ${props.theme.navHeight})`   };
@@ -13,17 +16,15 @@ const Section = styled.section`
 
 const StyledProjectsGrid = styled.ul`
     ${props => props.theme.resetList};
-    width: 90%;
-    padding-left: 200px;
+    width: 80%;
     padding-top: 120px;
+    padding-left: 18%;
     margin-left: auto;
     margin-right: auto;
   a {
     position: relative;
     z-index: 1;
   }
-
-  
 `;
 
 const StyledProject = styled.li`
@@ -36,7 +37,7 @@ const StyledProject = styled.li`
     ${props => props.theme.boxShadow};
   }
   &:not(:last-of-type) {
-    margin-bottom: 80px;
+    margin-bottom: 100px;
     @media (max-width: 768px) {
       margin-bottom: 70px;
     }
@@ -46,33 +47,16 @@ const StyledProject = styled.li`
   }
   &:nth-of-type(even) {
     .project-content {
-        left: 25%;
+      left: -10%;
     }
   }
   &:nth-of-type(odd) {
-
     .project-content {
-      right: 15%;
+      right: 40%;
       grid-column: 7 / -1;
       text-align: right;
       @media (max-width: 1080px) {
         grid-column: 5 / -1;
-      }
-      .project-overline {
-        position: relative;
-        right: 35%;
-      }
-      .project-title {
-        position: relative;
-        right: 35%;
-      }
-      .project-tech-list {
-        position: relative;
-        right: 35%;
-      }
-      .project-links {
-        position: relative;
-        right: 35%;
       }
       @media (max-width: 768px) {
         grid-column: 1 / -1;
@@ -106,8 +90,6 @@ const StyledProject = styled.li`
       }
     }
     .project-image {
-      position: relative;
-      left: 300px;
       grid-column: 1 / 8;
       @media (max-width: 768px) {
         grid-column: 1 / -1;
@@ -138,7 +120,7 @@ const StyledProject = styled.li`
     margin: 10px 0;
     color: #a87f6e;
     text-transform: uppercase;
-    font-family: 'Playfair Display', serif;;
+    font-family: 'Playfair Display', serif;
     font-size: 18px;
     font-weight: 400;
   }
@@ -146,10 +128,12 @@ const StyledProject = styled.li`
     color: #b7b7b7;
     text-transform: uppercase;
     font-weight: 500;
+    letter-spacing: 0.1em;
     font-size: clamp(24px, 5vw, 28px);
     a {
         text-decoration: none;
         color: black;
+        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
         &:hover{
             color: #a87f6e;
         }
@@ -158,7 +142,7 @@ const StyledProject = styled.li`
       margin: 0 0 20px;
     }
     @media (max-width: 768px) {
-      color: #ffffff;
+      color: var(--white);
       a {
         position: static;
         &:before {
@@ -176,15 +160,14 @@ const StyledProject = styled.li`
   }
   .project-description {
     position: relative;
-    width: 500px;
     z-index: 2;
-    padding: 30px;
-    // border-radius: 4px;
+    padding: 25px;
     border: 3px solid gray;
-    box-shadow: 5px 10px;
+    box-shadow: 5px 10px black;
     background-color: #f1e6da;
-    color: #000000;
+    color: #444444;
     font-size: 16px;
+    letter-spacing: 0.1em;
     @media (max-width: 768px) {
       padding: 20px 0;
       background-color: transparent;
@@ -194,10 +177,10 @@ const StyledProject = styled.li`
       }
     }
     a {
-        ${props => props.theme.inlineLink};
+      ${props => props.theme.inlineLink};
     }
     strong {
-      color: #ffffff;
+      color: var(--white);
       font-weight: normal;
     }
   }
@@ -211,17 +194,17 @@ const StyledProject = styled.li`
     list-style: none;
     li {
       margin: 0 20px 5px 0;
-      color: #000000;
-      font-family: 'Playfair Display', serif;
+      color: #444444;
+      font-family: var(--font-mono);
       font-size: 15px;
-      text-transform: uppercase;
+      letter-spacing: 0.1em;
       white-space: nowrap;
     }
     @media (max-width: 768px) {
       margin: 10px 0;
       li {
         margin: 0 10px 5px 0;
-        color: #ffffff;
+        color: var(--lightest-slate);
       }
     }
   }
@@ -231,16 +214,22 @@ const StyledProject = styled.li`
     position: relative;
     margin-top: 10px;
     margin-left: -10px;
-    color:  #ffffff;
     a {
-        ${props => props.theme.flexCenter};
-        
+      ${props => props.theme.flexCenter};
       padding: 10px;
+      a:hover {
+        color: #a87f6e;
+      }
       &.external {
         svg {
           width: 22px;
           height: 22px;
           margin-top: -4px;
+          color: black;
+          transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+          :hover {
+            color: #a87f6e;
+          }
         }
       }
       svg {
@@ -250,10 +239,8 @@ const StyledProject = styled.li`
     }
   }
   .project-image {
-    
     grid-column: 6 / -1;
     grid-row: 1 / -1;
-    width: auto;
     position: relative;
     z-index: 1;
     @media (max-width: 768px) {
@@ -264,8 +251,7 @@ const StyledProject = styled.li`
     a {
       width: 100%;
       height: 100%;
-      background-color: transparent;
-      border-radius: 4px;
+      border-radius: 10px;
       vertical-align: middle;
       &:hover,
       &:focus {
@@ -277,37 +263,53 @@ const StyledProject = styled.li`
           filter: none;
         }
       }
-    //   &:before {
-    //     content: '';
-    //     position: absolute;
-    //     width: 100%;
-    //     height: 100%;
-    //     top: 0;
-    //     left: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     z-index: 3;
-    //     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-    //     background-color: #e1d8ce;
-    //     mix-blend-mode: screen;
-    //   }
     }
     .img {
-      border-radius: 4px;
+      border-radius: 10px;
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1) brightness(65%);
       transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
       @media (max-width: 768px) {
         object-fit: cover;
         width: auto;
-        height: 100%;
+        height: 30%;
         filter: grayscale(100%) contrast(1) brightness(50%);
       }
     }
   }
 `;
 
+const ArrowContainer = styled.span`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+  top: 30px;
+
+  h3 {
+    font-weight: 200;
+    padding-top: 15px;
+    color: #a87f6e;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+`
+
 const FeaturedSection = () => {
+
+  const ref = useRef(null);
+
+  const scrollToProjects = () => {
+
+      let element = document.getElementById("projects");
+
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest'
+      })
+    }
+
     return (
       <Section>
           <StyledProjectsGrid>
@@ -338,13 +340,13 @@ const FeaturedSection = () => {
 
                     <div className="project-links">
                       {FeaturedData.github && (
-                        <a href={FeaturedData.github} aria-label="GitHub Link">
-                          <FiGithub color="black" />
+                        <a href={FeaturedData.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub Link" className="external">
+                          <FiGithub/>
                         </a>
                       )}
                       {FeaturedData.link && (
-                        <a href={FeaturedData.link} aria-label="External Link" className="external">
-                          <FiExternalLink color="black" />
+                        <a href={FeaturedData.link} target="_blank" rel="noopener noreferrer" aria-label="External Link" className="external">
+                          <FiExternalLink/>
                         </a>
                       )}
                     </div>
@@ -353,15 +355,26 @@ const FeaturedSection = () => {
 
                 <div className="project-image">
                   <a href={FeaturedData.link ? FeaturedData.link : FeaturedData.github ? FeaturedData.github : '#'}>
-                    <img src={FeaturedData.cover} alt={FeaturedData.title} className="img" width= "50%" height= "auto"/>
+                    <img src={FeaturedData.cover} alt={FeaturedData.title} className="img" width= "60%" height= "auto"/>
                   </a>
                 </div>
               </StyledProject>
             );
           })}
       </StyledProjectsGrid>
+      <ArrowContainer>
+            <NavLink style={{color:'white'}} to="#projects" >
+                <motion.div
+                    whileHover={{y:-5}}
+                    whileTap={{scale: 0.9}}
+                >
+                <DownArrow height={80} width={40} fill = "currentColor" ref={ref}  onClick={() => scrollToProjects()}/>
+                </motion.div>
+            </NavLink>
+            <h3>Other<br/>Projects</h3>
+        </ArrowContainer>
       </Section>
     )
   }
-  
+
   export default FeaturedSection
