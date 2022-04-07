@@ -13,7 +13,7 @@ const Tab = styled(TabUnstyled)`
 
   color: black;
   cursor: pointer;
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   font-weight: 200;
   background-color: transparent;
   width: 100%;
@@ -49,9 +49,9 @@ const StyledHighlight = style.div`
   left: -2px;
   z-index: 10;
   width: 3px;
-  height: 40px;
+  height: 52px;
   background: #a87f63;
-  transform: translateY(calc(${({ activeTabId }) => activeTabId-1} * 40px));
+  transform: translateY(calc(${({ activeTabId }) => activeTabId-1} * 52px));
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
   @media (max-width: 600px) {
@@ -122,6 +122,7 @@ const TabPanel = styled(TabPanelUnstyled)`
      list-style: none;
     li {
        position: relative;
+       font-size: 18px;
        margin: 15px 0px;
        padding-left: 30px;
 
@@ -164,7 +165,7 @@ const TabsList = styled(TabsListUnstyled)`
 const TabsSection = styled(TabsUnstyled)`
   position: absolute;
   top: 3rem;
-  left: 3rem;
+  left: 2rem;
   right: 3rem;
   display: flex;
 `

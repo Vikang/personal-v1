@@ -2,8 +2,8 @@ export const Featured = [
     {
         id:1,
         title:"God Is A Woman Theme",
-        cover: "https://raw.githubusercontent.com/Vikang/god-is-a-woman-theme/main/theme.png",
-        description:"A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on Visual Studio Marketplace, Package Control, Atom Package Manager, and npm.",
+        cover: "https://user-images.githubusercontent.com/15368212/162290310-8a6c4c99-47d7-4516-af74-50bf81ebf4c9.png",
+        description:"A light, pastel pink theme inspired by Ariana Grande's same titled music video. Available on Visual Studio Marketplace.",
         tags:["VS Code", "HTML"],
 
         link:"https://marketplace.visualstudio.com/items?itemName=Vikang.god-is-a-woman",
@@ -12,21 +12,21 @@ export const Featured = [
     {
         id:2,
         title:"Musical Pictures",
-        cover: "https://raw.githubusercontent.com/Vikang/god-is-a-woman-theme/main/theme.png",
-        description:"A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
-        tags:["Flask", "ReactJS", "Google Natural Language API"],
+        cover: "https://user-images.githubusercontent.com/4513787/160274781-a38dc031-39d8-42e7-a5e7-a94ac78f9e8e.png",
+        description:"A fun multilevel song guessing game to play either with friends or yourself! Each string of images decode a song lyric or song title. Use this clue to guess the song title as fast as you can!",
+        tags:["Flask", "React", "Google Natural Language API"],
 
-        link:"https://agency-website-eta.vercel.app/",
+        link:"https://github.com/Vikang/musicalpictures",
         github:"https://github.com/Vikang/musicalpictures"
     },
     {
         id:3,
-        title:"Personal Portfolio",
-        cover: "https://raw.githubusercontent.com/Vikang/god-is-a-woman-theme/main/theme.png",
-        description:"Having struggled with understanding how the Spotify OAuth flow works, I made the course I wish I could have had. Unlike tutorials that only cover a few concepts and leave you with half-baked GitHub repositories, this course covers everything from explaining the principles of REST APIs to implementing Spotify's OAuth flow and fetching API data in a React app. By the end of the course, you’ll have an app deployed to the internet you can add to your portfolio.",
-        tags:["GatsbyJS", "CSS", "HTML"],
+        title:"Spotify Personal Profile",
+        cover: "https://user-images.githubusercontent.com/15368212/162287500-72c588b9-2eff-4643-bf29-fa5efc881964.png",
+        description:"A web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more.",
+        tags:["React", "Styled Components", "Spotify API", "Heroku"],
 
-        link:"https://victoriaxwang.com/",
-        github:"https://github.com/Vikang/personal-v0"
+        link:"https://spotify-profile-vxw.herokuapp.com/",
+        github:"https://github.com/Vikang/spotify-profile"
     },
 ]

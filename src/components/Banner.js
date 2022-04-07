@@ -57,7 +57,7 @@ const SubBox2 = styled.div`
 `
 
 const Text = styled.div`
-    font-size: calc(1em _ 1.5vw);
+    font-size: calc(1em + 1.5vw);
     color: black;
     padding-top: 3rem;
     padding-right: 2rem;
@@ -82,6 +82,11 @@ const Name = styled.h1`
     font-size: 130px;
     font-weight: 200;
     letter-spacing: 0.1rem;
+
+    @media screen and (max-width: 1200px) {
+        width: 70%;
+        font-size: 100px;
+    }
 `
 
 const Details = styled.h1`
@@ -91,6 +96,11 @@ const Details = styled.h1`
     letter-spacing: 0.3rem;
     font-size: 22px;
     font-weight: 100;
+
+    @media screen and (max-width: 1200px) {
+        /* width: 70%; */
+        font-size: 18px;
+    }
 `
 
 const ResumeBttn = styled.button`
@@ -105,6 +115,13 @@ const ResumeBttn = styled.button`
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     cursor: pointer;
+
+    @media screen and (max-width: 1200px) {
+        padding: 14px 40px;
+        border: 3px solid #a87f63;
+        width: 250px;
+        height: 70px;
+    }
 
 `
 

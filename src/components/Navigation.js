@@ -159,7 +159,7 @@ const Navigation = () => {
         </HamburgerMenu>
         <Menu click={click}>
           <MenuItem to="/about" >About</MenuItem>
-          <MenuItem to="/work"  >Work</MenuItem>
+          <MenuItem to="/work"  >Work </MenuItem>
           <MenuItem to="/skills"  >Skills</MenuItem>
           <MenuItem to="/experience"  >Experience</MenuItem>
           <MenuItem target="_blank" to={{pathname:"mailto:victoriawang98@gmail.com"}} >Say Hi...</MenuItem>

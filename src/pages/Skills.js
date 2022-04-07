@@ -22,7 +22,7 @@ const Box = styled.div`
 const Main = styled.div`
   border: 2px solid #a87f63;
   color:  #a87f63;
-  background-color: #f1e6da;
+  background-color: #e1d8ce;
   /* background-color:  ${props => props.theme.body}; */
   padding: 2rem;
   width: 30vw;
@@ -38,6 +38,7 @@ const Main = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   /* @media only screen and (max-width: 1300px) {
     font-size: 15px;
     width: auto;
@@ -49,8 +50,8 @@ const Main = styled.div`
     word-wrap: break-word;
   }
   &:hover{
-    color: ${props => props.theme.body};
-    background-color: #a87f63;
+    /* color: ${props => props.theme.body}; */
+    background-color: #f1e6da;
 }
   ul.pretty-list {
     padding: 0.5rem 0;
@@ -120,7 +121,7 @@ const Items = styled.div`
 const Skills = () => {
   const languages = ['JavaScript', 'HTML', 'React', 'CSS', 'Python', 'Java',  'SQL', 'R'];
   const frameworks = ['React', 'Node', 'Django', 'Tensorflow' ]
-  const tools = ['Bash', 'Git & Github', 'Heroku', 'Gatsby', 'Docker', 'Flask','Travis-CI', 'Google Speech API', 'Cloud Natural Language API', 'OpenAI', 'Amazon Web Services']
+  const tools = ['Bash', 'Git & Github', 'AWS', 'Gatsby', 'Docker', 'Flask']
   const designs = ['Adobe Illustrator','Adobe Photoshop','Figma', 'Procreate', 'Processing' ]
 
   return (
@@ -179,8 +180,6 @@ const Skills = () => {
       </Box>
 
     </ThemeProvider>
-
-
   )
 }
 

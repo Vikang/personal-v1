@@ -31,7 +31,7 @@ const Heron = styled.div`
     position: absolute;
     top: 15%;
     right: 10%;
-    width: 20vw;
+    width: 23vw;
     animation: ${fly} 4s ease infinite;
     img {
         width: 100%;

@@ -311,7 +311,7 @@ const FeaturedSection = () => {
     }
 
     return (
-      <Section>
+      <Section id="top">
           <StyledProjectsGrid>
         {Featured &&
           Featured.map((FeaturedData) => {
@@ -320,7 +320,7 @@ const FeaturedSection = () => {
               <StyledProject key={Featured.id} >
                 <div className="project-content">
                   <div>
-                    <p className="project-overline">Featured Project</p>
+                    <p className="project-overline">Fea tured Project</p>
 
                     <h3 className="project-title">
                       <a href={FeaturedData.link}>{FeaturedData.title} </a>
