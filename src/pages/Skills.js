@@ -12,11 +12,22 @@ import Navigation from '../components/Navigation';
 const Box = styled.div`
   background-color: ${props => props.theme.body};
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
+  @media (max-width: 1024px) {
+      padding-top: 10%;
+      flex-direction: column;
+      justify-content: center;
+  }
+  @media only screen and (max-width: 768px) {
+    padding-top: 15%;
+    padding-bottom: 8%;
+  }
 `
 
 const Main = styled.div`
@@ -25,7 +36,8 @@ const Main = styled.div`
   background-color: #e1d8ce;
   /* background-color:  ${props => props.theme.body}; */
   padding: 2rem;
-  width: 30vw;
+  width: 520px;
+  /* width: 30vw; */
   height: 60vh;
   z-index: 3;
   line-height: 1.5;
@@ -39,15 +51,24 @@ const Main = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  /* @media only screen and (max-width: 1300px) {
-    font-size: 15px;
-    width: auto;
-    word-wrap: break-word;
-  } */
+
+  @media only screen and (max-width: 1500px) {
+    width: 400px;
+  }
+
   @media only screen and (max-width: 1300px) {
     font-size: 12px;
-    width: 250px;
     word-wrap: break-word;
+    width: 300px;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    margin-top: 50px;
+    width: 400px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 300px;
   }
   &:hover{
     /* color: ${props => props.theme.body}; */
@@ -85,6 +106,9 @@ const Main = styled.div`
         line-height: 12px;
       }
     }
+    .bigTitle {
+
+    }
   }
 `
 
@@ -117,6 +141,25 @@ const Items = styled.div`
     }
 }
 `
+const SkillsTitle = styled.h1`
+  position: absolute;
+  font-size: calc(4rem + 4vw);
+  text-transform: uppercase;
+  letter-spacing: 0rem;
+  color:${props => `rgba(${props.theme.textRgba},0.3)`};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 1%;
+  right: 25%;
+  padding: 1rem auto;
+  width: fit-content;
+
+  @media only screen and (max-width: 1024px) {
+    padding-left: 50%;
+    position: relative;
+  }
+`;
 
 const Skills = () => {
   const languages = ['JavaScript', 'HTML', 'React', 'CSS', 'Python', 'Java',  'SQL', 'R'];
@@ -175,8 +218,9 @@ const Skills = () => {
           <ul className="pretty-list">
             {designs && designs.map((design, i) => <li key={i}>{design}</li>)}
           </ul>
-          <BigTitle text="SKILLS" top="82%" right="20%" />
         </Main>
+        {/* <BigTitle text="SKILLS" top="81%" right="20%"/> */}
+        <SkillsTitle>SKILLS</SkillsTitle>
       </Box>
 
     </ThemeProvider>
