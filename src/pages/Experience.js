@@ -10,7 +10,7 @@ import Particle from '../subComponents/Particle';
 import heron from '../assets/Images/heron.png'
 import { keyframes } from 'styled-components';
 import LabTabs from '../components/LabTabs';
-import BigTitle from '../subComponents/BigTitle'
+// import BigTitle from '../subComponents/BigTitle'
 import Navigation from '../components/Navigation';
 
 const Box = styled.div`
@@ -19,6 +19,10 @@ const Box = styled.div`
   height: 100vh;
   position: relative;
   overflow: hidden;
+  @media (max-width: 1024px) {
+    padding-top: 20%;
+    height: 90vh;
+  }
 `
 
 const fly = keyframes`
@@ -37,10 +41,15 @@ const Heron = styled.div`
         width: 100%;
         height: auto;
     }
+
+  @media (max-width: 1024px) {
+    top: 16%;
+    right: 5%;
+    width: 30%;
+  }
 `
 const Main =  styled.div`
   border: 2px solid ${(props) => props.theme.text};
-  /* color: black; */
   padding: 2rem;
   width: 50vw;
   height: 40vh;
@@ -49,13 +58,61 @@ const Main =  styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-size: calc(0.6rem + 1vw); */
   backdrop-filter: blur(4px);
 
   position: absolute;
   left: calc(5rem + 5vw);
   top: 20rem;
+
+  @media (max-width: 1500px) {
+    width: 65vw;
+    height: 50vh;
+  }
+
+  @media (max-width: 1200px) {
+    width: 65vw;
+    height: 54vh;
+  }
+
+  @media (max-width: 1024px) {
+    width: 65vw;
+    height: 60vh;
+    top: 15rem;
+  }
+
+  @media (max-width: 768px) {
+    top: 15rem;
+    width: 79vw;
+    height: 60vh;
+    left: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    top: 15rem;
+    left: 10px;
+    width: 79vw;
+    height: 65vh;
+  }
 `
+
+const ExpTitle = styled.h1`
+  position: absolute;
+  font-size: calc(4rem + 4vw);
+  text-transform: uppercase;
+  letter-spacing: 0rem;
+  color:${props => `rgba(${props.theme.textRgba},0.3)`};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 13%;
+  left: 5%;
+  padding: 1rem auto;
+  width: fit-content;
+
+  @media only screen and (max-width: 768px) {
+    font-size: calc(3rem + 3vw);
+  }
+`;
 
 
 const Experience = () => {
@@ -68,13 +125,14 @@ const Experience = () => {
       <Socials/>
       <Email/>
       <Particle theme='dark'/>
+      <ExpTitle>EXPERIENCE</ExpTitle>
       <Heron>
           <img src={heron} alt="heron" />
       </Heron>
       <Main>
         <LabTabs/>
       </Main>
-      <BigTitle text="EXPERIENCE" top="10%" left="5%" />
+      {/* <BigTitle text="EXPERIENCE" top="10%" left="5%" /> */}
       </Box>
 
     </ThemeProvider>

@@ -41,6 +41,12 @@ const Tab = styled(TabUnstyled)`
     background-color: #eee5e0;
     color: #a87f63;
   }
+
+  @media (max-width: 600px) {
+    border-left: transparent;
+    width: 100px;
+    font-size: 14px;
+  }
 `;
 
 const StyledHighlight = style.div`
@@ -58,14 +64,14 @@ const StyledHighlight = style.div`
     top: auto;
     bottom: 0;
     width: 100%;
-    max-width: var(--tab-width);
+    max-width: 100px;
     height: 2px;
-    margin-left: 50px;
-    transform: translateX(calc(${({ activeTabId }) => activeTabId} * var(--tab-width)));
+    margin-left: 51px;
+    transform: translateX(calc(${({ activeTabId }) => activeTabId-1} * 100px));
   }
-  @media (max-width: 480px) {
-    margin-left: 25px;
-  }
+  // @media (max-width: 480px) {
+  //   margin-left: 25px;
+  // }
 `;
 
 const TabPanel = styled(TabPanelUnstyled)`
@@ -79,6 +85,7 @@ const TabPanel = styled(TabPanelUnstyled)`
 
     @media (max-width: 600px) {
       margin-left: 0;
+      margin-top: 15px;
     }
 
   h3 {
@@ -126,6 +133,14 @@ const TabPanel = styled(TabPanelUnstyled)`
        margin: 15px 0px;
        padding-left: 30px;
 
+       @media (max-width: 1024px) {
+          font-size: 17px;
+       }
+
+       @media (max-width: 600px) {
+          font-size: 17px;
+        }
+
        &:before {
          content: '▸';
          color: #a87f63;
@@ -149,16 +164,9 @@ const TabsList = styled(TabsListUnstyled)`
 
   @media (max-width: 600px) {
     display: flex;
-    overflow-x: auto;
-    width: calc(100% + 100px);
+    flex-direction: row;
     padding-left: 50px;
     margin-left: -50px;
-    margin-bottom: 30px;
-  }
-  @media (max-width: 480px) {
-    width: calc(100% + 50px);
-    padding-left: 25px;
-    margin-left: -25px;
   }
 `;
 
@@ -168,6 +176,13 @@ const TabsSection = styled(TabsUnstyled)`
   left: 2rem;
   right: 3rem;
   display: flex;
+
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 400px;
+  }
 `
 
 export default function LabTabs() {
