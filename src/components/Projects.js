@@ -26,13 +26,14 @@ const Title = styled.h1`
   padding: 1rem auto;
   width: fit-content;
 
-  @media (max-width: 40em) {
-    font-size: ${(props) => props.theme.fontxl};
+  @media (max-width: 768px) {
+    font-size: 50px;
   }
 `;
 
 const Center = styled.div`
 display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
 padding-top: 4rem;
@@ -45,8 +46,11 @@ const Grid = styled.div`
   position: relative;
   margin-bottom: 30px;
 
-  @media (max-width: 1080px) {
+  @media (max-width: 1400px) {
       grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+  @media (max-width: 1024px) {
+      grid-template-columns: repeat(1, minmax(250px, 1fr));
   }
 `
 
@@ -59,12 +63,7 @@ const ShowMoreButton = styled.button`
     padding: 14px 40px;
     width: 250px;
     height: 75px;
-    margin: 60px auto 60px;
-    margin-left: 44%;
-
-    @media (max-width: 1080px) {
-        margin-left: calc(13.5rem + 4vw);
-    }
+    margin: 40px 0px;
 
 
     cursor: pointer;
@@ -94,10 +93,10 @@ const Projects = () => {
             })
           }
         </Grid>
-        </Center>
         <ShowMoreButton className="more-button" onClick={() => setShowMore(!showMore)}>
           Show {showMore ? 'Less' : 'More'}
        </ShowMoreButton>
+        </Center>
     </Section>
   )
 }

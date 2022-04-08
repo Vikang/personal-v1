@@ -12,13 +12,22 @@ const LogoContainer = styled.div`
     top: 2rem;
     z-index: 21;
 
+    img {
+      width: 70px;
+      height: 70px;
+      @media (max-width: 1080px) {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
 `
 
 const Logo = () => {
   return (
     <LogoContainer >
         <NavLink to="/" >
-        <img src={MyLogo} width="70px" height="70px" alt="My Logo"/>
+        <img src={MyLogo} alt="My Logo"/>
         </NavLink>
     </LogoContainer>
   )

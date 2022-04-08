@@ -18,12 +18,19 @@ const Icons = styled.div`
     &>*:not(:last-child) {
         margin: 0.5rem 0;
     }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `
 
 const Line = styled(motion.span)`
     width: 3px;
     height: 8rem;
     background-color: ${props => props.theme.text};
+    @media (max-width: 768px) {
+        display: none;
+    }
 `
 
 const Socials = () => {

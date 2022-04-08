@@ -22,6 +22,12 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1080px) {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const Box = styled.div`
@@ -32,6 +38,11 @@ const Box = styled.div`
     /* justify-content: center; */
     align-items: center;
     padding-top: 7%;
+    padding-left: 100px;
+
+  @media (max-width: 1080px) {
+    padding-left: 0px;
+  }
 `
 
 const Box2 = styled.div`
@@ -41,41 +52,110 @@ const Box2 = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: left;
-    padding-top: 8%;
-    padding-left: 6%;
+    /* padding-left: 6%; */
+    padding-bottom: 10%;
+
+    @media (max-width: 2000px) {
+        width: 80%;
+        padding-top: 8%;
+    }
+
+    @media (max-width: 1080px) {
+        width: 80%;
+    }
 `
 
 const ImgContainer = styled.img`
-    width: 90%;
-    height: auto;
+    width: auto;
+    height: 700px;
     /* align-self: flex-start; */
     cursor: pointer;
+    top: 8rem;
+    left: calc(15rem-8vw);
+    position: absolute;
+
+    @media (max-width: 1500px) {
+      width: auto;
+      height: 640px;
+    }
+
+    @media (max-width: 1080px) {
+      top: 0rem;
+      /* left: 2rem; */
+      position: relative;
+      width: auto;
+      height: 670px;
+    }
+
+    @media (max-width: 768px) {
+      top: 0rem;
+      position: relative;
+      width: auto;
+      height: 500px;
+  }
+
 `
 
 const DetailsContainer = styled.div`
-    width: 70%;
+    width: 60%;
+    padding-right: 12rem;
+    padding-left: 7rem;
+
+
+    @media (max-width: 1500px) {
+      padding-left: 8rem;
+    }
+
+    @media (max-width: 1080px) {
+      width: 100%;
+      padding-left: 0rem;
+      display: flex;
+      flex-direction: column;
+      column-gap: 1rem;
+  }
 `
 
 const Details1 = styled.h3`
+    font-size: 1.2rem;
     padding-top: 5%;
     font-weight: 700;
     letter-spacing: 0.2em;
     line-height: 140%;
     padding-bottom: 5%;
+
+    @media (max-width: 1500px) {
+      font-size: 1rem;
+      padding-bottom: 0%;
+  }
+
+    @media (max-width: 1080px) {
+      font-size: 1rem;
+      padding-bottom: 0%;
+  }
 `
 
 const Details2 = styled.h3`
+    font-size: 1.2rem;
     padding-top: 3%;
     line-height: 140%;
     font-weight: 200;
     letter-spacing: 0.19em;
+
+    @media (max-width: 1500px) {
+      font-size: 1rem;
+      padding-bottom: 0%;
+  }
+
+    @media (max-width: 1080px) {
+      font-size: 1rem;
+  }
 `
 
 const ArrowContainer = styled.span`
   position: relative;
-  bottom: 20px;
   display: flex;
   justify-content: center;
+  margin-top: -7%;
 
   h3 {
     font-weight: 200;
@@ -83,6 +163,16 @@ const ArrowContainer = styled.span`
     color: #a87f6e;
     text-transform: uppercase;
     font-size: 14px;
+  }
+
+  @media (max-width: 1200px) {
+      margin-top: -6%;
+      z-index: 30;
+  }
+
+  @media (max-width: 1080px) {
+      margin-top: -2%;
+      z-index: 30;
   }
 `
 
