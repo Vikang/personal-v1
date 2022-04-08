@@ -197,7 +197,7 @@ const TabsSection = styled(TabsUnstyled)`
     width: 400px;
   }
   @media (max-width: 480px) {
-    left: 0.2rem;
+    left: 0.5rem;
   }
 `
 
