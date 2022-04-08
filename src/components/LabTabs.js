@@ -13,7 +13,7 @@ const Tab = styled(TabUnstyled)`
 
   color: black;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 200;
   background-color: transparent;
   width: 100%;
@@ -22,7 +22,7 @@ const Tab = styled(TabUnstyled)`
   border-top: 0;
   border-right: 0;
   border-bottom: 0;
-  border-left: 1px solid #ffffff;
+  border-left: 1px solid #f1e6da;
   display: flex;
   justify-content: center;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -49,9 +49,9 @@ const StyledHighlight = style.div`
   left: -2px;
   z-index: 10;
   width: 3px;
-  height: 52px;
+  height: 46px;
   background: #a87f63;
-  transform: translateY(calc(${({ activeTabId }) => activeTabId-1} * 52px));
+  transform: translateY(calc(${({ activeTabId }) => activeTabId-1} * 46px));
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
   @media (max-width: 600px) {
