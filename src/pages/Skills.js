@@ -6,7 +6,6 @@ import { FaLaptopCode, FaGlobe, FaTools, FaPalette } from "react-icons/fa";
 import Socials from '../subComponents/Socials';
 import Email from '../subComponents/Email';
 import Particle from '../subComponents/Particle';
-import BigTitle from '../subComponents/BigTitle'
 import Navigation from '../components/Navigation';
 
 const Box = styled.div`
@@ -36,7 +35,7 @@ const Main = styled.div`
   background-color: #e1d8ce;
   /* background-color:  ${props => props.theme.body}; */
   padding: 2rem;
-  width: 520px;
+  width: 570px;
   /* width: 30vw; */
   height: 60vh;
   z-index: 3;
