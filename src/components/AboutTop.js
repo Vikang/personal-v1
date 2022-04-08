@@ -104,6 +104,7 @@ const DetailsContainer = styled.div`
 
     @media (max-width: 1500px) {
       padding-left: 8rem;
+      padding-right: 0rem;
     }
 
     @media (max-width: 1080px) {
