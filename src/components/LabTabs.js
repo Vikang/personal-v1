@@ -47,6 +47,10 @@ const Tab = styled(TabUnstyled)`
     width: 100px;
     font-size: 14px;
   }
+
+  @media (max-width: 480px) {
+    width: 90px;
+  }
 `;
 
 const StyledHighlight = style.div`
@@ -69,9 +73,10 @@ const StyledHighlight = style.div`
     margin-left: 51px;
     transform: translateX(calc(${({ activeTabId }) => activeTabId-1} * 100px));
   }
-  // @media (max-width: 480px) {
-  //   margin-left: 25px;
-  // }
+  @media (max-width: 480px) {
+    transform: translateX(calc(${({ activeTabId }) => activeTabId-1} * 90px));
+    max-width: 90px;
+  }
 `;
 
 const TabPanel = styled(TabPanelUnstyled)`
@@ -86,6 +91,10 @@ const TabPanel = styled(TabPanelUnstyled)`
     @media (max-width: 600px) {
       margin-left: 0;
       margin-top: 15px;
+    }
+
+    @media (max-width: 480px) {
+      width: 85%;
     }
 
   h3 {
@@ -141,6 +150,10 @@ const TabPanel = styled(TabPanelUnstyled)`
           font-size: 17px;
         }
 
+        @media (max-width: 480px) {
+          font-size: 15px;
+        }
+
        &:before {
          content: '▸';
          color: #a87f63;
@@ -182,6 +195,9 @@ const TabsSection = styled(TabsUnstyled)`
     flex-direction: column;
     overflow: hidden;
     width: 400px;
+  }
+  @media (max-width: 480px) {
+    left: 0.2rem;
   }
 `
 

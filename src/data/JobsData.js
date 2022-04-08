@@ -28,7 +28,7 @@ export const Jobs = [
         id: 3,
         date: '2020-03-21',
         title: 'Inpatient Oncology',
-        company: 'UVAHospital',
+        company: 'Hospital',
         location: 'Charlottesville, VA',
         range: 'October 2018 - March 2020',
         url: 'https://www.madisonhouse.org/overview-medical-services/',

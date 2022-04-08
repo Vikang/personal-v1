@@ -10,7 +10,6 @@ import Particle from '../subComponents/Particle';
 import heron from '../assets/Images/heron.png'
 import { keyframes } from 'styled-components';
 import LabTabs from '../components/LabTabs';
-// import BigTitle from '../subComponents/BigTitle'
 import Navigation from '../components/Navigation';
 
 const Box = styled.div`
@@ -46,6 +45,9 @@ const Heron = styled.div`
     top: 16%;
     right: 5%;
     width: 30%;
+  }
+  @media (max-width: 480px) {
+    top: 20%;
   }
 `
 const Main =  styled.div`
@@ -93,6 +95,12 @@ const Main =  styled.div`
     width: 79vw;
     height: 65vh;
   }
+
+  @media (max-width: 480px) {
+    left: 5px;
+    width: 79vw;
+    height: 60vh;
+  }
 `
 
 const ExpTitle = styled.h1`
@@ -111,6 +119,9 @@ const ExpTitle = styled.h1`
 
   @media only screen and (max-width: 768px) {
     font-size: calc(3rem + 3vw);
+  }
+  @media (max-width: 480px) {
+    font-size: calc(2.5rem + 2.5vw);
   }
 `;
 
