@@ -102,6 +102,9 @@ const Text = styled.div`
         padding-left: 1rem;
         width: 130%;
     }
+    @media (max-width: 480px) {
+        padding-left: 1.5rem;
+    }
 `
 
 const Subtitle = styled.h1`
@@ -112,6 +115,10 @@ const Subtitle = styled.h1`
 
     @media (max-width: 1024px) {
         font-size: 18px;
+    }
+    @media (max-width: 480px) {
+        margin-top: -5%;
+        padding-bottom: 2%;
     }
 `
 
@@ -138,7 +145,7 @@ const Name = styled.h1`
         text-align: center;
         width: fit-content;
         padding-left: 10px;
-        margin-top: -30px;
+        /* margin-top: -30px; */
     }
 
     @media (max-width: 600px) {
@@ -147,6 +154,9 @@ const Name = styled.h1`
         width: fit-content;
         padding-left: 10px;
         margin-top: -30px;
+    }
+    @media (max-width: 480px) {
+        font-size: 50px;
     }
 `
 
@@ -175,7 +185,7 @@ const Details = styled.h1`
         padding-left: 5%;
     }
     @media (max-width: 600px) {
-        /* padding-left: 5%; */
+        padding-left: 2%;
         width: 100%;
     }
 `

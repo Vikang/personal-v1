@@ -48,6 +48,10 @@ const Work = styled(NavLink)`
     right: calc(0.5rem + 1vw);
     top: 40%;
   }
+  @media only screen and (max-width: 480px) {
+    right: calc(0.5rem - 2vw);
+    top: 40%;
+  }
 `
 
 const Experience = styled(NavLink)`
@@ -60,7 +64,7 @@ const Experience = styled(NavLink)`
   z-index: 1;
 
   @media only screen and (max-width: 768px) {
-    left: -2.5rem;
+    left: -3rem;
   }
 `
 
