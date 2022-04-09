@@ -29,6 +29,10 @@ const Title = styled.h1`
   @media (max-width: 768px) {
     font-size: 50px;
   }
+  @media (max-width: 468px) {
+    font-size: 50px;
+    text-align: center;
+  }
 `;
 
 const Center = styled.div`

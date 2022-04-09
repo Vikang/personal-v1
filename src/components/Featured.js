@@ -25,6 +25,11 @@ const StyledProjectsGrid = styled.ul`
     position: relative;
     z-index: 1;
   }
+  @media (max-width: 768px) {
+    margin-left: -10%;
+    margin-right: 10%;
+    overflow: hidden;
+  }
 `;
 
 const StyledProject = styled.li`
@@ -39,32 +44,118 @@ const StyledProject = styled.li`
   &:not(:last-of-type) {
     margin-bottom: 100px;
     @media (max-width: 768px) {
-      margin-bottom: 70px;
+      /* margin-bottom: 70px; */
     }
-    @media (max-width: 480px) {
+    /* @media (max-width: 480px) {
       margin-bottom: 30px;
-    }
+    }  */
   }
   &:nth-of-type(even) {
     .project-content {
-      left: -10%;
+      /* left: -10%; */
+      @media (max-width: 1048px) {
+        grid-column: 1 / 10;
+        left: -10%;
+      }
+      @media (max-width: 768px) {
+        grid-column: 2 / 11;
+      }
+    }
+    .project-overline {
+      @media (max-width: 468px) {
+        width: 150%;
+      }
+    }
+    .project-description {
+      @media (max-width: 1048px) {
+          width: 70%;
+        }
+    }
+    .project-tech-list {
+      @media (max-width: 768px) {
+          width: 70%;
+        }
+    }
+    .project-image {
+      .img {
+        @media (max-width: 1200px) {
+          height: 13rem;
+          width: 19rem;
+        }
+        @media (max-width: 1048px) {
+          height: 13rem;
+          width: 19rem;
+        }
+        @media (max-width: 768px) {
+          height: 31rem;
+          width: 40rem;
+        }
+      }
+      @media (max-width: 768px) {
+        grid-column: 1 / -1;
+        height: 500px;
+        width: 40rem;
+      }
     }
   }
   &:nth-of-type(odd) {
+    .project-image {
+      .img {
+        margin-left: 10%;
+        @media (max-width: 1500px) {
+          margin-left: -10%;
+          /*
+          margin-left: -15%; */
+        }
+        @media (max-width: 1200px) {
+          margin-left: -5%;
+          height: 13rem;
+          width: 19rem;
+          /*
+          margin-left: -15%; */
+        }
+         @media (max-width: 1048px) {
+          margin-left: -20%;
+          height: 13rem;
+          width: 19rem;
+          /*
+          margin-left: -15%; */
+        }
+        @media (max-width: 768px) {
+          margin-left: 0%;
+          height: 31rem;
+          width: 40rem;
+        }
+      }
+    }
     .project-content {
       right: 40%;
       grid-column: 7 / -1;
       text-align: right;
-      @media (max-width: 1080px) {
-        grid-column: 5 / -1;
+      @media (max-width: 1048px) {
+        grid-column: 6 / -1;
       }
       @media (max-width: 768px) {
-        grid-column: 1 / -1;
-        padding: 40px 40px 30px;
+        grid-column: 4 / -1;
+        /* padding: 40px 40px 30px;
+         */
         text-align: left;
+        margin-left: 150px;
+        display: flex;
+        flex-direction: column;
+        width: 230px;
       }
-      @media (max-width: 480px) {
+      @media (max-width: 468px) {
+        grid-column: 4 / -1;
+        width: 200px;
+      }
+      /* @media (max-width: 480px) {
         padding: 25px 25px 20px;
+      } */
+    }
+    .project-title {
+      @media (max-width: 768px) {
+        width: 150%;
       }
     }
     .project-tech-list {
@@ -93,6 +184,7 @@ const StyledProject = styled.li`
       grid-column: 1 / 8;
       @media (max-width: 768px) {
         grid-column: 1 / -1;
+        height: 500px;
       }
     }
   }
@@ -100,9 +192,9 @@ const StyledProject = styled.li`
     position: relative;
     grid-column: 1 / 7;
     grid-row: 1 / -1;
-    @media (max-width: 1080px) {
+    /* @media (max-width: 1080px) {
       grid-column: 1 / 9;
-    }
+    } */
     @media (max-width: 768px) {
       display: flex;
       flex-direction: column;
@@ -112,9 +204,9 @@ const StyledProject = styled.li`
       padding: 40px 40px 30px;
       z-index: 5;
     }
-    @media (max-width: 480px) {
+    /* @media (max-width: 480px) {
       padding: 30px 25px 20px;
-    }
+    } */
   }
   .project-overline {
     margin: 10px 0;
@@ -134,15 +226,14 @@ const StyledProject = styled.li`
         text-decoration: none;
         color: black;
         transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        @media (max-width: 768px) {
+          color: white;
+        }
         &:hover{
             color: #a87f6e;
         }
     }
-    @media (min-width: 768px) {
-      margin: 0 0 20px;
-    }
-    @media (max-width: 768px) {
-      color: var(--white);
+    /* @media (max-width: 768px) {
       a {
         position: static;
         &:before {
@@ -156,7 +247,7 @@ const StyledProject = styled.li`
           left: 0;
         }
       }
-    }
+    } */
   }
   .project-description {
     position: relative;
@@ -168,13 +259,27 @@ const StyledProject = styled.li`
     color: #444444;
     font-size: 16px;
     letter-spacing: 0.1em;
+    /* width: 70%; */
+
+    @media (max-width: 1200px) {
+      width: 100%;
+    }
+
+
     @media (max-width: 768px) {
-      padding: 20px 0;
-      background-color: transparent;
+      width: 130%;
+      text-align: left;
       box-shadow: none;
+      background-color: transparent;
+      color: #f1e6da;
+      border: none;
+      padding: 20px 0;
+      /* padding: 20px 0;
+
+
       &:hover {
         box-shadow: none;
-      }
+      } */
     }
     a {
       ${props => props.theme.inlineLink};
@@ -199,14 +304,17 @@ const StyledProject = styled.li`
       font-size: 15px;
       letter-spacing: 0.1em;
       white-space: nowrap;
+      @media (max-width: 768px) {
+          color: #b7b7b7;
+      }
     }
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
       margin: 10px 0;
       li {
         margin: 0 10px 5px 0;
         color: var(--lightest-slate);
       }
-    }
+    } */
   }
   .project-links {
     display: flex;
@@ -227,6 +335,9 @@ const StyledProject = styled.li`
           margin-top: -4px;
           color: black;
           transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+          @media (max-width: 768px) {
+            color: #b7b7b7;
+          }
           :hover {
             color: #a87f6e;
           }
@@ -243,16 +354,15 @@ const StyledProject = styled.li`
     grid-row: 1 / -1;
     position: relative;
     z-index: 1;
-    @media (max-width: 768px) {
+    /* @media (max-width: 768px) {
       grid-column: 1 / -1;
-      height: 100%;
       opacity: 0.25;
-    }
+    } */
     a {
       width: 100%;
       height: 100%;
       border-radius: 10px;
-      vertical-align: middle;
+      /* vertical-align: middle; */
       &:hover,
       &:focus {
         background: transparent;
@@ -261,6 +371,9 @@ const StyledProject = styled.li`
         .img {
           background: transparent;
           filter: none;
+          @media (max-width: 768px) {
+            filter: grayscale(100%) contrast(1) brightness(20%);
+          }
         }
       }
     }
@@ -269,11 +382,19 @@ const StyledProject = styled.li`
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1) brightness(65%);
       transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+      width: 500px;
+      height: auto;
+        @media (max-width: 1200px) {
+          height: 15rem;
+          width: 25rem;
+          /* margin-left: -15%; */
+        }
       @media (max-width: 768px) {
+        border-radius: 0px;
         object-fit: cover;
         width: auto;
-        height: 30%;
-        filter: grayscale(100%) contrast(1) brightness(50%);
+        height: 100%;
+        filter: grayscale(100%) contrast(1) brightness(10%);
       }
     }
   }
@@ -355,7 +476,7 @@ const FeaturedSection = () => {
 
                 <div className="project-image">
                   <a href={FeaturedData.link ? FeaturedData.link : FeaturedData.github ? FeaturedData.github : '#'}>
-                    <img src={FeaturedData.cover} alt={FeaturedData.title} className="img" width= "60%" height= "auto"/>
+                    <img src={FeaturedData.cover} alt={FeaturedData.title} className="img"/>
                   </a>
                 </div>
               </StyledProject>

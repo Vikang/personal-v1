@@ -21,7 +21,7 @@ export const BeigeTheme = {
     navHeight: '5rem',
     boxShadow: css`
     box-shadow: 0 10px 30px -15px #b7b7b7;
-    transition: var(--transition);
+    transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     &:hover,
     &:focus {
         box-shadow: 0 20px 30px -15px #b7b7b7;
@@ -37,7 +37,7 @@ export const BeigeTheme = {
     text-decoration: none;
     text-decoration-skip-ink: auto;
     position: relative;
-    transition: var(--transition);
+    transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     color: #a87f6e;
     &:hover,
     &:focus,
