@@ -30,8 +30,11 @@ const Box = styled(motion.div)`
     border-left: 2px solid white;
     border-right: 2px solid white;
 
-
     z-index: 1;
+
+    @media (max-width: 1400px) {
+        width: 75vw;
+    }
 
 `
 
@@ -53,6 +56,21 @@ const SubBox2 = styled.div`
         transform: translate(-70%,0%);
         width: 82%;
         height: auto;
+
+        @media (max-width: 1500px) {
+            width: 110%;
+        }
+
+        @media (max-width: 1200px) {
+            width: 110%;
+        }
+
+        @media (max-width: 1024px) {
+            width: 120%;
+        }
+        @media (max-width: 768px) {
+            display: none;
+        }
     }
 `
 
@@ -68,6 +86,22 @@ const Text = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    @media screen and (max-width: 1400px) {
+        padding-left: 4rem;
+    }
+
+    @media (max-width: 1024px) {
+        padding-left: 4rem;
+    }
+    @media (max-width: 768px) {
+        text-align: center;
+        padding-left: 2rem;
+    }
+    @media (max-width: 600px) {
+        text-align: center;
+        padding-left: 1rem;
+        width: 130%;
+    }
 `
 
 const Subtitle = styled.h1`
@@ -75,6 +109,10 @@ const Subtitle = styled.h1`
     letter-spacing: 0.4rem;
     font-size: 22px;
     font-weight: 100;
+
+    @media (max-width: 1024px) {
+        font-size: 18px;
+    }
 `
 
 const Name = styled.h1`
@@ -83,9 +121,32 @@ const Name = styled.h1`
     font-weight: 200;
     letter-spacing: 0.1rem;
 
+    @media screen and (max-width: 1500px) {
+        font-size: 120px;
+    }
+
     @media screen and (max-width: 1200px) {
         width: 70%;
         font-size: 100px;
+    }
+
+    @media (max-width: 1024px) {
+        font-size: 84px;
+    }
+
+    @media (max-width: 768px) {
+        text-align: center;
+        width: fit-content;
+        padding-left: 10px;
+        margin-top: -30px;
+    }
+
+    @media (max-width: 600px) {
+        font-size: 68px;
+        text-align: center;
+        width: fit-content;
+        padding-left: 10px;
+        margin-top: -30px;
     }
 `
 
@@ -97,9 +158,25 @@ const Details = styled.h1`
     font-size: 22px;
     font-weight: 100;
 
+    @media screen and (max-width: 1500px) {
+        width: 90%;
+    }
+
     @media screen and (max-width: 1200px) {
-        /* width: 70%; */
         font-size: 18px;
+        width: 90%;
+    }
+    @media (max-width: 1024px) {
+        font-size: 16px;
+        margin-top: -10px;
+        width: 85%;
+    }
+    @media (max-width: 768px) {
+        padding-left: 5%;
+    }
+    @media (max-width: 600px) {
+        /* padding-left: 5%; */
+        width: 100%;
     }
 `
 
@@ -158,7 +235,7 @@ const Banner = () => {
             initial={{opacity:0}}
             animate={{opacity: 1}}
             transition={{ duration:1, delay:2 }} >
-                <img className="pic" src={ AnimeMe } alt = "Anime Me"/>
+                <img className="pic" src={ AnimeMe } alt = "Character"/>
             </motion.div>
         </SubBox2>
     </Box>

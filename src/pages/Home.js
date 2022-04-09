@@ -28,10 +28,11 @@ const Container = styled.div`
 const Contact = styled(NavLink)`
   color: ${props => props.theme.text};
   position: absolute;
-  top: 2rem;
+  top: 3rem;
   right: calc(3rem + 2vw);
   text-decoration: none;
   z-index: 1;
+
 `
 
 const Work = styled(NavLink)`
@@ -42,6 +43,11 @@ const Work = styled(NavLink)`
   transform: rotate(90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index: 1;
+
+  @media only screen and (max-width: 768px) {
+    right: calc(0.5rem + 1vw);
+    top: 40%;
+  }
 `
 
 const Experience = styled(NavLink)`
@@ -52,11 +58,15 @@ const Experience = styled(NavLink)`
   transform: rotate(-90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index: 1;
+
+  @media only screen and (max-width: 768px) {
+    left: -2.5rem;
+  }
 `
 
 const BottomBar = styled.div`
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   left: 0;
   right: 0;
   width: 100%;
