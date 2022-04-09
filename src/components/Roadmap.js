@@ -10,6 +10,7 @@ const Section = styled.section`
   width: 100vw;
   position: relative;
   background-color: ${props => props.theme.body};
+  overflow: hidden;
 `
 
 const Title = styled.h1`
@@ -99,7 +100,7 @@ const Items = styled.ul`
       border-radius: 0 50px 0 50px;
       text-align: left;
 
-      
+
     }
     p {
       border-radius: 0 40px 0 40px;
@@ -225,7 +226,7 @@ const Roadmap = () => {
   }, []);
 
   return (
-    <Section id="roadmap">   
+    <Section id="roadmap">
       <Title>Roadmap</Title>
       <Container>
         <SvgContainer>
