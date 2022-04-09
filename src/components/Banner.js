@@ -103,7 +103,7 @@ const Text = styled.div`
         width: 130%;
     }
     @media (max-width: 480px) {
-        padding-left: 1.5rem;
+        padding-left: 2rem;
     }
 `
 
